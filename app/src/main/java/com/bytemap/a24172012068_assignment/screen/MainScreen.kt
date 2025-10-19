@@ -22,6 +22,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import android.widget.Toast
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.rememberDrawerState
 import com.bytemap.a24172012068_assignment.components.AppBar
 import com.bytemap.a24172012068_assignment.components.BottomNavigationBar
@@ -33,9 +35,10 @@ import kotlinx.coroutines.launch
 fun MainScreen() {
     var currentScreen by remember { mutableStateOf("Home") }
     val context = LocalContext.current
-    val drawerState = rememberDrawerState(initialValue = androidx.compose.material3.DrawerValue.Closed)
+    val drawerState =
+        rememberDrawerState(initialValue = androidx.compose.material3.DrawerValue.Closed)
     val scope = rememberCoroutineScope()
-    
+
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
@@ -59,7 +62,7 @@ fun MainScreen() {
         Scaffold(
             topBar = {
                 AppBar(
-                    onMenuClick = { 
+                    onMenuClick = {
                         scope.launch {
                             drawerState.open()
                         }
@@ -85,6 +88,7 @@ fun MainScreen() {
                     .fillMaxSize()
                     .padding(paddingValues)
                     .background(Color(0xFFF8F9FA))
+                    .verticalScroll(rememberScrollState())
             ) {
                 when (currentScreen) {
                     "Home" -> HomeScreen()

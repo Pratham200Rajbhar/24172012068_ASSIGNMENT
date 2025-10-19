@@ -13,7 +13,9 @@ import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MediumTopAppBar
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,10 +31,10 @@ fun AppBar(
     onMenuClick: () -> Unit = {},
     onNotificationClick: () -> Unit = {}
 ) {
-    CenterAlignedTopAppBar(
+    TopAppBar(
         title = {
             Column(
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.Start
             ) {
                 Text(
                     text = "SafeHorizon",
@@ -41,7 +43,7 @@ fun AppBar(
                     color = Color.Black
                 )
                 Text(
-                    text = "Hi, PRATHAM",
+                    text = "Hi, USER1",
                     fontSize = 14.sp,
                     color = Color.Gray
                 )
