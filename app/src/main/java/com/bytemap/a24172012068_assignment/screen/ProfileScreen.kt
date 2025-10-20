@@ -48,6 +48,7 @@ fun ProfileScreen() {
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFFF8F9FA))
+            .verticalScroll(rememberScrollState())
             .padding(8.dp)
     ) {
         UserIDCard()

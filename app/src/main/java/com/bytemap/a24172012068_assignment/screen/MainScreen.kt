@@ -22,8 +22,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import android.widget.Toast
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.rememberDrawerState
 import com.bytemap.a24172012068_assignment.components.AppBar
 import com.bytemap.a24172012068_assignment.components.BottomNavigationBar
@@ -48,7 +46,15 @@ fun MainScreen() {
                     scope.launch {
                         drawerState.close()
                     }
-                    Toast.makeText(context, "$item clicked!", Toast.LENGTH_SHORT).show()
+                    // Navigate to the appropriate screen based on drawer item
+                    when (item) {
+                        "Notifications" -> currentScreen = "Alerts"
+                        "File E-FIR" -> currentScreen = "EFir"
+                        "Trip Monitor" -> currentScreen = "TripMonitor"
+                        "Location History" -> currentScreen = "LocationHistory"
+                        "Emergency Contacts" -> currentScreen = "EmergencyContacts"
+                        "Settings" -> currentScreen = "Settings"
+                    }
                 },
                 onLogoutClick = {
                     scope.launch {
@@ -88,13 +94,17 @@ fun MainScreen() {
                     .fillMaxSize()
                     .padding(paddingValues)
                     .background(Color(0xFFF8F9FA))
-                    .verticalScroll(rememberScrollState())
             ) {
                 when (currentScreen) {
                     "Home" -> HomeScreen()
                     "Map" -> MapScreen()
                     "Alerts" -> AlertsScreen()
                     "Profile" -> ProfileScreen()
+                    "EFir" -> EFirScreen()
+                    "TripMonitor" -> TripMonitorScreen()
+                    "LocationHistory" -> LocationHistoryScreen()
+                    "EmergencyContacts" -> EmergencyContactsScreen()
+                    "Settings" -> SettingsScreen()
                     else -> HomeScreen()
                 }
             }

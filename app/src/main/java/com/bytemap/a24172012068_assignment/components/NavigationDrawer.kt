@@ -1,31 +1,18 @@
 package com.bytemap.a24172012068_assignment.components
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ContactPhone
-import androidx.compose.material.icons.filled.Description
-import androidx.compose.material.icons.filled.History
-import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.TrendingUp
-import androidx.compose.material3.Divider
-import androidx.compose.material3.DrawerState
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.ModalDrawerSheet
-import androidx.compose.material3.NavigationDrawerItem
-import androidx.compose.material3.Text
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
@@ -35,7 +22,8 @@ import androidx.compose.ui.unit.sp
 
 data class MenuItem(
     val title: String,
-    val icon: ImageVector
+    val icon: ImageVector,
+    val badge: Int? = null
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -46,116 +34,239 @@ fun NavigationDrawer(
     onLogoutClick: () -> Unit = {}
 ) {
     val menuItems = listOf(
-        MenuItem("Notifications", Icons.Default.Notifications),
-        MenuItem("File E-FIR", Icons.Default.Description),
-        MenuItem("Trip Monitor", Icons.Default.TrendingUp),
-        MenuItem("Location History", Icons.Default.History),
-        MenuItem("Emergency Contacts", Icons.Default.ContactPhone),
-        MenuItem("Settings", Icons.Default.Settings)
+        MenuItem("Notifications", Icons.Outlined.Notifications, badge = 3),
+        MenuItem("File E-FIR", Icons.Outlined.Description),
+        MenuItem("Trip Monitor", Icons.Outlined.TrendingUp),
+        MenuItem("Location History", Icons.Outlined.History),
+        MenuItem("Emergency Contacts", Icons.Outlined.ContactPhone),
+        MenuItem("Settings", Icons.Outlined.Settings)
     )
-    
-    ModalDrawerSheet {
+
+    ModalDrawerSheet(
+        drawerContainerColor = Color.White
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(vertical = 24.dp)
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally
+            // Profile Section
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 24.dp)
             ) {
-                androidx.compose.material3.Card(
-                    shape = CircleShape,
-                    colors = androidx.compose.material3.CardDefaults.cardColors(containerColor = Color(0xFF2196F3)),
-                    modifier = Modifier.size(80.dp)
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier.fillMaxWidth()
                 ) {
-                    Column(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
+                    Box(
+                        modifier = Modifier
+                            .size(90.dp)
+                            .clip(CircleShape)
+                            .background(
+                                brush = Brush.linearGradient(
+                                    colors = listOf(Color(0xFF667EEA), Color(0xFF764BA2))
+                                )
+                            ),
+                        contentAlignment = Alignment.Center
                     ) {
                         Text(
                             text = "P",
-                            fontSize = 32.sp,
+                            fontSize = 36.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.White
                         )
                     }
-                }
-                
-                Spacer(modifier = Modifier.height(16.dp))
-                
-                Text(
-                    text = "PRATHAM RAJBHAR",
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.Black
-                )
-                
-                Spacer(modifier = Modifier.height(8.dp))
-                
-                androidx.compose.material3.Card(
-                    colors = androidx.compose.material3.CardDefaults.cardColors(containerColor = Color(0xFFF5F5F5))
-                ) {
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
                     Text(
-                        text = "ID: 46a08ef58a11b7f86bcb9a8d97c4ac95",
-                        fontSize = 12.sp,
-                        color = Color.Gray,
-                        modifier = Modifier.padding(8.dp)
+                        text = "Pratham Rajbhar",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF1A1A2E)
+                    )
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    Surface(
+                        shape = RoundedCornerShape(20.dp),
+                        color = Color(0xFFF3F4F6)
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .size(6.dp)
+                                    .clip(CircleShape)
+                                    .background(Color(0xFF10B981))
+                            )
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text(
+                                text = "Active",
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Medium,
+                                color = Color(0xFF10B981)
+                            )
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    Surface(
+                        shape = RoundedCornerShape(12.dp),
+                        color = Color(0xFFFAFAFA),
+                        modifier = Modifier.fillMaxWidth(0.9f)
+                    ) {
+                        Text(
+                            text = "ID: 46a08ef58a11b7f86bcb",
+                            fontSize = 11.sp,
+                            color = Color(0xFF6B7280),
+                            fontWeight = FontWeight.Medium,
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
+                        )
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            HorizontalDivider(
+                thickness = 1.dp,
+                color = Color(0xFFE5E7EB),
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Menu Items
+            Column(
+                modifier = Modifier.padding(horizontal = 12.dp),
+                verticalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
+                menuItems.forEach { item ->
+                    NavigationDrawerItem(
+                        icon = {
+                            Icon(
+                                imageVector = item.icon,
+                                contentDescription = item.title,
+                                modifier = Modifier.size(24.dp)
+                            )
+                        },
+                        label = {
+                            Text(
+                                text = item.title,
+                                fontSize = 15.sp,
+                                fontWeight = FontWeight.Medium
+                            )
+                        },
+                        badge = {
+                            item.badge?.let { count ->
+                                Surface(
+                                    shape = CircleShape,
+                                    color = Color(0xFFEF4444)
+                                ) {
+                                    Text(
+                                        text = count.toString(),
+                                        fontSize = 11.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        color = Color.White,
+                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                    )
+                                }
+                            }
+                        },
+                        selected = false,
+                        onClick = { onItemClick(item.title) },
+                        colors = NavigationDrawerItemDefaults.colors(
+                            unselectedContainerColor = Color.Transparent,
+                            selectedContainerColor = Color(0xFFEFF6FF),
+                            unselectedIconColor = Color(0xFF6B7280),
+                            selectedIconColor = Color(0xFF3B82F6),
+                            unselectedTextColor = Color(0xFF374151),
+                            selectedTextColor = Color(0xFF1E40AF)
+                        ),
+                        shape = RoundedCornerShape(12.dp),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 4.dp)
                     )
                 }
             }
-            
-            Spacer(modifier = Modifier.height(32.dp))
-            
-            menuItems.forEach { item ->
-                NavigationDrawerItem(
-                    icon = {
-                        Icon(
-                            imageVector = item.icon,
-                            contentDescription = item.title
-                        )
-                    },
-                    label = {
-                        Text(
-                            text = item.title,
-                            fontSize = 16.sp
-                        )
-                    },
-                    selected = false,
-                    onClick = { onItemClick(item.title) }
-                )
-            }
-            
+
             Spacer(modifier = Modifier.weight(1f))
-            
-            Divider()
-            
+
+            HorizontalDivider(
+                thickness = 1.dp,
+                color = Color(0xFFE5E7EB),
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // Logout Button
             NavigationDrawerItem(
                 icon = {
                     Icon(
-                        imageVector = Icons.Default.Person,
-                        contentDescription = "Logout"
+                        imageVector = Icons.Outlined.ExitToApp,
+                        contentDescription = "Logout",
+                        modifier = Modifier.size(24.dp)
                     )
                 },
                 label = {
                     Text(
                         text = "Logout",
-                        fontSize = 16.sp,
-                        color = Color.Red
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.SemiBold
                     )
                 },
                 selected = false,
-                onClick = onLogoutClick
+                onClick = onLogoutClick,
+                colors = NavigationDrawerItemDefaults.colors(
+                    unselectedContainerColor = Color.Transparent,
+                    unselectedIconColor = Color(0xFFEF4444),
+                    unselectedTextColor = Color(0xFFEF4444)
+                ),
+                shape = RoundedCornerShape(12.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
             )
-            
-            Spacer(modifier = Modifier.height(16.dp))
-            
-            Text(
-                text = "SafeHorizon v1.0.0",
-                fontSize = 12.sp,
-                color = Color.Gray,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
-            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // App Version
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        imageVector = Icons.Outlined.Shield,
+                        contentDescription = null,
+                        tint = Color(0xFF9CA3AF),
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = "SafeHorizon",
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color(0xFF6B7280)
+                    )
+                }
+                Text(
+                    text = "Version 1.0.0",
+                    fontSize = 11.sp,
+                    color = Color(0xFF9CA3AF),
+                    modifier = Modifier.padding(top = 4.dp)
+                )
+            }
         }
     }
 }
@@ -164,6 +275,6 @@ fun NavigationDrawer(
 @Composable
 fun NavigationDrawerPreview() {
     NavigationDrawer(
-        drawerState = androidx.compose.material3.rememberDrawerState(initialValue = androidx.compose.material3.DrawerValue.Closed)
+        drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     )
 }
