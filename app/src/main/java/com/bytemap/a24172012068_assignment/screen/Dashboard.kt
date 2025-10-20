@@ -56,7 +56,7 @@ fun Dashboard() {
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFFF8F9FA))
-            .padding(16.dp)
+            .padding(8.dp)
     ) {
         SafetyScoreCard()
         Spacer(modifier = Modifier.height(16.dp))
