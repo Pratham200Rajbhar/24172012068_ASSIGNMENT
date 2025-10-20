@@ -1,5 +1,6 @@
 package com.bytemap.a24172012068_assignment.components
 
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -19,7 +20,9 @@ fun NavDrawer(
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.padding(16.dp)
         )
+        Spacer(modifier = Modifier.padding(8.dp))
         Divider()
+        Spacer(modifier = Modifier.padding(8.dp))
         menuItems.forEach { (label, route) ->
             NavigationDrawerItem(
                 label = { Text(label) },

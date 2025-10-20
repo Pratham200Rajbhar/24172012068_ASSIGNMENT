@@ -13,9 +13,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun EFirScreen() {
+fun EFirScreen(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -27,9 +28,9 @@ fun EFirScreen() {
         EFirUI()
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun EFirScreenPreview() {
-    EFirScreen()
-}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun EFirScreenPreview() {
+//    EFirScreen()
+//}

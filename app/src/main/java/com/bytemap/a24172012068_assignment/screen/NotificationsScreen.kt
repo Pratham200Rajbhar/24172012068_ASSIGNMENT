@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun SettingsScreen(navController: NavController) {
+fun NotificationsScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -21,7 +21,7 @@ fun SettingsScreen(navController: NavController) {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Settings",
+            text = "Notifications",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold
         )
@@ -29,7 +29,7 @@ fun SettingsScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(16.dp))
         
         Text(
-            text = "Configure your app settings here",
+            text = "No notifications yet",
             fontSize = 16.sp
         )
     }
@@ -37,6 +37,6 @@ fun SettingsScreen(navController: NavController) {
 
 @Preview(showBackground = true)
 @Composable
-fun SettingsScreenPreview() {
-    SettingsScreen(navController = null!!)
+fun NotificationsScreenPreview() {
+    NotificationsScreen(navController = null!!)
 }

@@ -34,6 +34,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import android.widget.Toast
+import androidx.navigation.NavController
 
 data class QuickAction(
     val title: String,
@@ -43,7 +44,7 @@ data class QuickAction(
 )
 
 @Composable
-fun Dashboard() {
+fun Dashboard(navController: NavController) {
     val context = LocalContext.current
     
     val quickActions = listOf(
@@ -386,12 +387,4 @@ fun QuickActionCard(
             )
         }
     }
-}
-
-
-
-@Composable
-@Preview(showBackground = true)
-fun DashboardPreview() {
-    Dashboard()
 }
