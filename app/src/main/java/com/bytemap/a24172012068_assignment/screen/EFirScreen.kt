@@ -28,9 +28,3 @@ fun EFirScreen(navController: NavController){
         EFirUI()
     }
 }
-//
-//@Preview(showBackground = true)
-//@Composable
-//fun EFirScreenPreview() {
-//    EFirScreen()
-//}

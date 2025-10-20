@@ -171,7 +171,6 @@ fun ContactUI() {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Loop through each contact detail
             contactDetails.forEachIndexed { index, (label, value, icon) ->
                 Row(
                     verticalAlignment = Alignment.CenterVertically
@@ -221,11 +220,10 @@ fun LocationUI() {
         Triple("Tracking", "Inactive", Icons.Default.TrackChanges)
     )
 
-    // Define colors for each status
     val statusColors = mapOf(
-        "Disabled" to Color(0xFFD32F2F),  // Red
-        "Unknown" to Color(0xFFFBC02D),   // Yellow
-        "Inactive" to Color(0xFF9E9E9E)   // Gray
+        "Disabled" to Color(0xFFD32F2F),
+        "Unknown" to Color(0xFFFBC02D),
+        "Inactive" to Color(0xFF9E9E9E)
     )
 
     Card(

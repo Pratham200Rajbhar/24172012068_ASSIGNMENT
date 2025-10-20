@@ -91,7 +91,6 @@ fun AlertCardUI(
     }
 }
 
-// Data holder for alerts
 data class Alert(
     val icon: String,
     val title: String,
@@ -115,13 +114,6 @@ fun AlertsScreen() {
             .background(Color(0xFFF6F7F9))
             .padding(vertical = 20.dp, horizontal = 16.dp)
     ) {
-        Text(
-            text = "Alerts",
-            fontSize = 22.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color(0xFF22223B),
-            modifier = Modifier.padding(bottom = 12.dp)
-        )
         LazyColumn(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {

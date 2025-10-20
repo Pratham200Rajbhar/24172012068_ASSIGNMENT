@@ -6,7 +6,9 @@ import android.icu.util.Calendar
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.Button
@@ -43,6 +45,7 @@ fun EFirUI() {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .verticalScroll(rememberScrollState())
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
@@ -85,7 +88,7 @@ fun IncidentType() {
             ) {
                 i.forEach { incident ->
                     OutlinedButton(
-                        onClick = { /* TODO: Handle ${incident.name} incident */ },
+                        onClick = { },
                         modifier = Modifier.weight(1f)
                     ) {
                         Icon(
@@ -96,7 +99,6 @@ fun IncidentType() {
                         Text(text = incident.name)
                     }
                 }
-                // Fill row if there’s an odd number of items
                 if (i.size < 2) {
                     Spacer(modifier = Modifier.weight(1f))
                 }
@@ -146,7 +148,6 @@ fun DateTime() {
     var selectedDate by remember { mutableStateOf("") }
     val calendar = Calendar.getInstance()
 
-    // DatePicker Dialog
     val datePickerDialog = DatePickerDialog(
         context,
         { _, year, month, dayOfMonth ->
@@ -213,12 +214,12 @@ fun LocationInput(){
     Row(
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Checkbox( checked = false, onCheckedChange = { /* TODO: Handle checkbox state change */ } )
+        Checkbox( checked = false, onCheckedChange = { } )
         Text(text = "Use current location", color = Color.Gray)
     }
     OutlinedTextField(
         value = "",
-        onValueChange = { /* TODO: Handle location input change */ },
+        onValueChange = { },
         leadingIcon = {
             Icon(
                 imageVector = Icons.Default.LocationOn,
@@ -256,7 +257,7 @@ fun WitnessesInput(){
                 color = Color.Gray, fontSize = 14.sp) }
         )
         Button(
-            onClick = { /* TODO: Handle adding witness */ },
+            onClick = { },
             shape = RoundedCornerShape(8.dp),
             modifier = Modifier
                 .padding(start = 8.dp)

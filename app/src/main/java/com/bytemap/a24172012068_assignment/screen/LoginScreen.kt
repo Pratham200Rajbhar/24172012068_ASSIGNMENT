@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.VisibilityOff
@@ -44,6 +46,7 @@ fun LoginScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
+            .verticalScroll(rememberScrollState())
             .padding(20.dp)
     ) {
         Image(painter = painterResource(R.drawable.logo),
@@ -115,7 +118,6 @@ fun LoginScreen() {
                 contentColor = Color.White
             )
             , onClick = {
-            // Handle login action
         }) {
             Text(text = "Login", fontSize = 20.sp)
         }
