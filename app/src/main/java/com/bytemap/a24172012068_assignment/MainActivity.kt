@@ -29,7 +29,9 @@ import com.bytemap.a24172012068_assignment.screen.AlertsScreen
 import com.bytemap.a24172012068_assignment.screen.Dashboard
 import com.bytemap.a24172012068_assignment.screen.EFirScreen
 import com.bytemap.a24172012068_assignment.screen.EmergencyContactsScreen
+import com.bytemap.a24172012068_assignment.screen.EmergencySOSScreen
 import com.bytemap.a24172012068_assignment.screen.LocationHistoryScreen
+import com.bytemap.a24172012068_assignment.screen.SOSSuccessScreen
 import com.bytemap.a24172012068_assignment.screen.MapScreen
 import com.bytemap.a24172012068_assignment.screen.NotificationsScreen
 import com.bytemap.a24172012068_assignment.screen.ProfileScreen
@@ -137,6 +139,8 @@ fun MainApp() {
                 composable("location_history") { LocationHistoryScreen(navController) }
                 composable("emergency_contacts") { EmergencyContactsScreen(navController) }
                 composable("settings") { SettingsScreen(navController) }
+                composable("emergency_sos") { EmergencySOSScreen(navController) }
+                composable("sos_sent") { SOSSuccessScreen(navController) }
             }
         }
     }

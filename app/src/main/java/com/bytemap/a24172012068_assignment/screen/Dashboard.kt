@@ -66,7 +66,11 @@ fun Dashboard(navController: NavController) {
         Spacer(modifier = Modifier.height(16.dp))
         LocationCard()
         Spacer(modifier = Modifier.height(16.dp))
-        EmergencyButton()
+        EmergencyButton(
+            onClick = {
+                navController.navigate("emergency_sos")
+            }
+        )
         Spacer(modifier = Modifier.height(20.dp))
         
         Column(
