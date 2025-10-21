@@ -38,5 +38,5 @@ fun LocationHistoryScreen(navController: NavController) {
 @Preview(showBackground = true)
 @Composable
 fun LocationHistoryScreenPreview() {
-    LocationHistoryScreen(navController = null!!)
+    LocationHistoryScreen(navController = androidx.navigation.compose.rememberNavController())
 }

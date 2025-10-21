@@ -144,8 +144,8 @@ fun MiniContactCard(contact: EmergencyContact) {
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showBackground = true)
 @Composable
 fun EmergencyContactsScreenPreview() {
-    EmergencyContactsScreen(navController = null!!)
+    EmergencyContactsScreen(navController = androidx.navigation.compose.rememberNavController())
 }

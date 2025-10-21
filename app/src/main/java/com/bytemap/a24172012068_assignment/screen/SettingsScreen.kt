@@ -367,6 +367,6 @@ fun LogoutButton() {
 @Composable
 fun SettingsScreenPreview() {
     MaterialTheme {
-        SettingsScreen(navController = null!!)
+        SettingsScreen(navController = androidx.navigation.compose.rememberNavController())
     }
 }

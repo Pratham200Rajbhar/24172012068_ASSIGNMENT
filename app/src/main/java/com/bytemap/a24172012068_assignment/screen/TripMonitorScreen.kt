@@ -496,5 +496,5 @@ fun AddTripDialog(
 @Preview(showBackground = true)
 @Composable
 fun TripMonitorScreenPreview() {
-    TripMonitorScreen(navController = null)
+    TripMonitorScreen(navController = androidx.navigation.compose.rememberNavController())
 }

@@ -38,5 +38,5 @@ fun NotificationsScreen(navController: NavController) {
 @Preview(showBackground = true)
 @Composable
 fun NotificationsScreenPreview() {
-    NotificationsScreen(navController = null!!)
+    NotificationsScreen(navController = androidx.navigation.compose.rememberNavController())
 }
