@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -55,6 +56,7 @@ fun LoginScreen() {
                 .align(
                     alignment = Alignment.CenterHorizontally
                 )
+                .size(150.dp)
                 .padding(0.dp, 50.dp, 0.dp, 10.dp))
 
         Text(text = "Welcome Back", modifier = Modifier
