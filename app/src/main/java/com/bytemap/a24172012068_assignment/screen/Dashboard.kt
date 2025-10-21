@@ -35,7 +35,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import android.widget.Toast
 import androidx.navigation.NavController
 
 data class QuickAction(
@@ -88,7 +87,7 @@ fun Dashboard(navController: NavController) {
                     icon = quickActions[0].icon,
                     modifier = Modifier.weight(1f),
                     onClick = { 
-                        Toast.makeText(context, "Safety Tips clicked!", Toast.LENGTH_SHORT).show()
+                        navController.navigate("safety_tips")
                     }
                 )
                 QuickActionCard(
@@ -98,7 +97,7 @@ fun Dashboard(navController: NavController) {
                     icon = quickActions[1].icon,
                     modifier = Modifier.weight(1f),
                     onClick = { 
-                        Toast.makeText(context, "E-FIR clicked!", Toast.LENGTH_SHORT).show()
+                        navController.navigate("efir")
                     }
                 )
             }
@@ -114,7 +113,7 @@ fun Dashboard(navController: NavController) {
                     icon = quickActions[2].icon,
                     modifier = Modifier.weight(1f),
                     onClick = { 
-                        Toast.makeText(context, "Services clicked!", Toast.LENGTH_SHORT).show()
+                        navController.navigate("services")
                     }
                 )
                 QuickActionCard(
@@ -124,7 +123,7 @@ fun Dashboard(navController: NavController) {
                     icon = quickActions[3].icon,
                     modifier = Modifier.weight(1f),
                     onClick = { 
-                        Toast.makeText(context, "Danger Zone clicked!", Toast.LENGTH_SHORT).show()
+                        navController.navigate("danger_zone")
                     }
                 )
             }

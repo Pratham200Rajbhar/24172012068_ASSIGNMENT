@@ -51,6 +51,26 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.foundation.layout)
     implementation(libs.androidx.navigation.compose)
+    
+    // OpenStreetMap dependencies
+    implementation("org.osmdroid:osmdroid-android:6.1.18")
+    implementation("org.osmdroid:osmdroid-wms:6.1.18") {
+        exclude(group = "com.j256.ormlite", module = "ormlite-core")
+        exclude(group = "com.j256.ormlite", module = "ormlite-android")
+    }
+    implementation("org.osmdroid:osmdroid-mapsforge:6.1.18")
+    implementation("org.osmdroid:osmdroid-geopackage:6.1.18") {
+        exclude(group = "com.j256.ormlite", module = "ormlite-core")
+        exclude(group = "com.j256.ormlite", module = "ormlite-android")
+    }
+    
+    // Location services
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    
+    // Permissions
+    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

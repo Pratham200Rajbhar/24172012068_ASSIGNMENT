@@ -27,6 +27,7 @@ import com.bytemap.a24172012068_assignment.components.NavDrawer
 import com.bytemap.a24172012068_assignment.components.NavMenuItem
 import com.bytemap.a24172012068_assignment.screen.AlertsScreen
 import com.bytemap.a24172012068_assignment.screen.Dashboard
+import com.bytemap.a24172012068_assignment.screen.DangerZoneScreen
 import com.bytemap.a24172012068_assignment.screen.EFirScreen
 import com.bytemap.a24172012068_assignment.screen.EmergencyContactsScreen
 import com.bytemap.a24172012068_assignment.screen.EmergencySOSScreen
@@ -35,6 +36,8 @@ import com.bytemap.a24172012068_assignment.screen.SOSSuccessScreen
 import com.bytemap.a24172012068_assignment.screen.MapScreen
 import com.bytemap.a24172012068_assignment.screen.NotificationsScreen
 import com.bytemap.a24172012068_assignment.screen.ProfileScreen
+import com.bytemap.a24172012068_assignment.screen.SafetyTipsScreen
+import com.bytemap.a24172012068_assignment.screen.ServicesScreen
 import com.bytemap.a24172012068_assignment.screen.SettingsScreen
 import com.bytemap.a24172012068_assignment.screen.TripMonitorScreen
 import kotlinx.coroutines.launch
@@ -141,6 +144,9 @@ fun MainApp() {
                 composable("settings") { SettingsScreen(navController) }
                 composable("emergency_sos") { EmergencySOSScreen(navController) }
                 composable("sos_sent") { SOSSuccessScreen(navController) }
+                composable("safety_tips") { SafetyTipsScreen(navController) }
+                composable("services") { ServicesScreen(navController) }
+                composable("danger_zone") { DangerZoneScreen(navController) }
             }
         }
     }

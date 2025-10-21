@@ -69,7 +69,6 @@ fun CountdownScreen(
                     timeLeft = 0
                     isRunning = false
                     isCompleted = true
-                    // Navigate to the beautiful SOS Sent screen
                     navController.navigate("sos_sent") {
                         popUpTo("emergency_sos") { inclusive = true }
                     }
@@ -102,7 +101,6 @@ fun CountdownScreen(
                 verticalArrangement = Arrangement.Center
             ) {
                 if (!isCompleted) {
-                    // Emergency Icon
                     Box(
                         modifier = Modifier
                             .size(80.dp)
@@ -120,7 +118,6 @@ fun CountdownScreen(
 
                     Spacer(modifier = Modifier.height(24.dp))
 
-                    // Emergency Text
                     Text(
                         text = "EMERGENCY SOS",
                         color = Color.White,
@@ -140,7 +137,6 @@ fun CountdownScreen(
 
                     Spacer(modifier = Modifier.height(24.dp))
 
-                    // Countdown Display
                     Box(
                         modifier = Modifier
                             .size(120.dp)
@@ -158,7 +154,6 @@ fun CountdownScreen(
 
                     Spacer(modifier = Modifier.height(32.dp))
 
-                    // Stop Button
                     Button(
                         onClick = {
                             countDownTimer?.cancel()
@@ -201,7 +196,6 @@ fun CountdownScreen(
 @Preview
 fun EmergencySOSScreenPreview() {
     MaterialTheme {
-        // Preview without navigation
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
@@ -224,7 +218,6 @@ fun EmergencySOSScreenPreview() {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    // Emergency Icon
                     Box(
                         modifier = Modifier
                             .size(80.dp)
@@ -242,7 +235,6 @@ fun EmergencySOSScreenPreview() {
 
                     Spacer(modifier = Modifier.height(24.dp))
 
-                    // Emergency Text
                     Text(
                         text = "EMERGENCY SOS",
                         color = Color.White,
@@ -262,7 +254,6 @@ fun EmergencySOSScreenPreview() {
 
                     Spacer(modifier = Modifier.height(24.dp))
 
-                    // Countdown Display
                     Box(
                         modifier = Modifier
                             .size(120.dp)
@@ -280,7 +271,6 @@ fun EmergencySOSScreenPreview() {
 
                     Spacer(modifier = Modifier.height(32.dp))
 
-                    // Stop Button
                     Button(
                         onClick = { },
                         colors = ButtonDefaults.buttonColors(

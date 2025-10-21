@@ -57,7 +57,6 @@ fun SOSSentScreen(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                // Success Icon
                 Box(
                     modifier = Modifier
                         .size(80.dp)
