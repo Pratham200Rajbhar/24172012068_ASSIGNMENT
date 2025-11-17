@@ -12,7 +12,7 @@ The Smart Tourist Safety Monitoring & Incident Response System is a comprehensiv
 - Weather and safety condition updates
 - Emergency contact integration
 
-### 📱 Incident Reporting
+### 📱 E-FIR
 - Quick incident reporting with location tagging
 - Photo and video evidence upload
 - Categorized incident types (medical, security, natural disasters)
@@ -34,27 +34,27 @@ The Smart Tourist Safety Monitoring & Incident Response System is a comprehensiv
 
 ### Home Screen
 <div align="center">
-<img src="![img.png](img.png)" alt="Home Screen" width="300" height="600" style="border: 1px solid #ddd; border-radius: 8px; margin: 10px;">
+<img src="screenshots/home_screen.png" alt="Home Screen" style="width:300px; height:600px; border: 1px solid #ddd; border-radius: 8px; margin: 10px;" />
 </div>
 
-### Incident Reporting
+### E-FIR
 <div align="center">
-<img src="![img_2.png](img_2.png)" alt="Incident Reporting Screen" width="300" height="600" style="border: 1px solid #ddd; border-radius: 8px; margin: 10px;">
+<img src="screenshots/e_fir.png" alt="E-FIR Screen" style="width:300px; height:600px; border: 1px solid #ddd; border-radius: 8px; margin: 10px;" />
 </div>
 
 ### Emergency Dashboard
 <div align="center">
-<img src="![img_1.png](img_1.png)" alt="Emergency Dashboard" width="300" height="600" style="border: 1px solid #ddd; border-radius: 8px; margin: 10px;">
+<img src="screenshots/emergency_dashboard.png" alt="Emergency Dashboard" style="width:300px; height:600px; border: 1px solid #ddd; border-radius: 8px; margin: 10px;" />
 </div>
 
 ### Safety Map View
 <div align="center">
-<img src="![img_3.png](img_3.png)" alt="Safety Map View" width="300" height="600" style="border: 1px solid #ddd; border-radius: 8px; margin: 10px;">
+<img src="screenshots/safety_map.png" alt="Safety Map View" style="width:300px; height:600px; border: 1px solid #ddd; border-radius: 8px; margin: 10px;" />
 </div>
 
 ### Profile & Settings
 <div align="center">
-<img src="![img_4.png](img_4.png)" alt="Profile and Settings" width="300" height="600" style="border: 1px solid #ddd; border-radius: 8px; margin: 10px;">
+<img src="screenshots/profile_settings.png" alt="Profile and Settings" style="width:300px; height:600px; border: 1px solid #ddd; border-radius: 8px; margin: 10px;" />
 </div>
 
 ## Technical Specifications
@@ -143,7 +143,7 @@ User Interface → ViewModel → Repository → Network/Local Database
 ### Key Screens
 - **Dashboard**: Quick access to all safety features
 - **Map View**: Interactive safety map with incident markers
-- **Incident Report**: Step-by-step incident reporting process
+- **E-FIR**: Step-by-step incident reporting process
 - **Emergency Panel**: Emergency contacts and response options
 - **Profile Management**: Personal information and preferences
 
