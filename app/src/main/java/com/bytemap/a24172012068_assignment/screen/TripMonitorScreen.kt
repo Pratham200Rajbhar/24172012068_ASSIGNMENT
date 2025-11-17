@@ -26,7 +26,6 @@ fun TripMonitorScreen(navController: NavController) {
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        // ✅ Material 3 TabRow
         TabRow(
             selectedTabIndex = selectedTabIndex,
             containerColor = MaterialTheme.colorScheme.surface,
@@ -57,7 +56,6 @@ fun TripMonitorScreen(navController: NavController) {
             }
         }
 
-        // ✅ Tab Content
         Box(
             modifier = Modifier
                 .fillMaxSize()

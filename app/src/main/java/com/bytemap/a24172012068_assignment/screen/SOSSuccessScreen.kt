@@ -50,7 +50,6 @@ fun SOSSuccessScreen(navController: NavController) {
             .background(Color(0xFFE8F5E8))
             .verticalScroll(rememberScrollState())
     ) {
-        // Header Section
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
@@ -60,7 +59,6 @@ fun SOSSuccessScreen(navController: NavController) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                // Success Icon with glow effect
                 Box(
                     modifier = Modifier
                         .size(120.dp)
@@ -98,7 +96,6 @@ fun SOSSuccessScreen(navController: NavController) {
             }
         }
 
-        // Safety Options Section
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -112,44 +109,40 @@ fun SOSSuccessScreen(navController: NavController) {
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
-            // Call Emergency Services Card
             SafetyOptionCard(
                 icon = Icons.Default.Phone,
                 iconColor = Color(0xFFE53E3E),
                 iconBgColor = Color(0xFFFFE5E5),
                 title = "Call Emergency Services",
                 description = "Direct call to police (100)",
-                onClick = { /* Handle call */ }
+                onClick = { }
             )
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // Share Live Location Card
             SafetyOptionCard(
                 icon = Icons.Default.LocationOn,
                 iconColor = Color(0xFF2196F3),
                 iconBgColor = Color(0xFFE3F2FD),
                 title = "Share Live Location",
                 description = "View your location on map",
-                onClick = { /* Handle location sharing */ }
+                onClick = { }
             )
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // Emergency Contacts Card
             SafetyOptionCard(
                 icon = Icons.Default.Person,
                 iconColor = Color(0xFFFF9800),
                 iconBgColor = Color(0xFFFFF3E0),
                 title = "Emergency Contacts",
                 description = "Call trusted contacts",
-                onClick = { /* Handle emergency contacts */ }
+                onClick = { }
             )
         }
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Safety Tips Section
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -173,7 +166,6 @@ fun SOSSuccessScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Return to Home Button
         Button(
             onClick = {
                 navController.popBackStack()
@@ -193,34 +185,6 @@ fun SOSSuccessScreen(navController: NavController) {
                 fontWeight = FontWeight.Bold,
                 color = Color.White
             )
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        // Emergency Alert Banner
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(Color(0xFF2196F3))
-                .padding(16.dp)
-        ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    imageVector = Icons.Default.LocationOn,
-                    contentDescription = "Alert",
-                    tint = Color.White,
-                    modifier = Modifier.size(20.dp)
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = "Emergency Alert Nearby - 0.0km away",
-                    color = Color.White,
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Medium
-                )
-            }
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -252,7 +216,6 @@ fun SafetyOptionCard(
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Icon
             Box(
                 modifier = Modifier
                     .size(48.dp)
@@ -270,7 +233,6 @@ fun SafetyOptionCard(
 
             Spacer(modifier = Modifier.width(16.dp))
 
-            // Text Content
             Column(
                 modifier = Modifier.weight(1f)
             ) {
@@ -287,7 +249,6 @@ fun SafetyOptionCard(
                 )
             }
 
-            // Arrow
             Icon(
                 imageVector = Icons.Default.ArrowForward,
                 contentDescription = "Navigate",
@@ -308,7 +269,6 @@ fun SOSSuccessScreenPreview() {
                 .background(Color(0xFFE8F5E8))
                 .verticalScroll(rememberScrollState())
         ) {
-            // Header Section
             Box(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier
@@ -318,7 +278,6 @@ fun SOSSuccessScreenPreview() {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    // Success Icon with glow effect
                     Box(
                         modifier = Modifier
                             .size(120.dp)
@@ -356,7 +315,6 @@ fun SOSSuccessScreenPreview() {
                 }
             }
 
-            // Safety Options Section
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -370,7 +328,6 @@ fun SOSSuccessScreenPreview() {
                     modifier = Modifier.padding(bottom = 16.dp)
                 )
 
-                // Call Emergency Services Card
                 SafetyOptionCard(
                     icon = Icons.Default.Phone,
                     iconColor = Color(0xFFE53E3E),
@@ -382,7 +339,6 @@ fun SOSSuccessScreenPreview() {
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                // Share Live Location Card
                 SafetyOptionCard(
                     icon = Icons.Default.LocationOn,
                     iconColor = Color(0xFF2196F3),
@@ -394,7 +350,6 @@ fun SOSSuccessScreenPreview() {
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                // Emergency Contacts Card
                 SafetyOptionCard(
                     icon = Icons.Default.Person,
                     iconColor = Color(0xFFFF9800),
@@ -407,7 +362,6 @@ fun SOSSuccessScreenPreview() {
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Safety Tips Section
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -431,7 +385,6 @@ fun SOSSuccessScreenPreview() {
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Return to Home Button
             Button(
                 onClick = { },
                 colors = ButtonDefaults.buttonColors(
@@ -449,34 +402,6 @@ fun SOSSuccessScreenPreview() {
                     fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Emergency Alert Banner
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color(0xFF2196F3))
-                    .padding(16.dp)
-            ) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.LocationOn,
-                        contentDescription = "Alert",
-                        tint = Color.White,
-                        modifier = Modifier.size(20.dp)
-                    )
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text(
-                        text = "Emergency Alert Nearby - 0.0km away",
-                        color = Color.White,
-                        fontSize = 14.sp,
-                        fontWeight = FontWeight.Medium
-                    )
-                }
             }
 
             Spacer(modifier = Modifier.height(16.dp))

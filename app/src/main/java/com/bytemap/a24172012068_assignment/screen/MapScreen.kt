@@ -21,13 +21,11 @@ fun MapScreen() {
     var searchQuery by remember { mutableStateOf("") }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        // Map Background
         SimpleMapView(
             modifier = Modifier.fillMaxSize(),
             initialLocation = GeoPoint(37.7749, -122.4194)
         )
 
-        // Top Search Bar
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -60,9 +58,8 @@ fun MapScreen() {
             )
         }
 
-        // My Location Button
         FloatingActionButton(
-            onClick = { /* Handle location centering */ },
+            onClick = { },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .padding(16.dp),

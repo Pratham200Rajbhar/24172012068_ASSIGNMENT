@@ -62,7 +62,6 @@ fun RegisterScreen() {
         )
         Spacer(modifier = Modifier.height(30.dp))
 
-        // Full Name
         FormField(
             label = "Full Name",
             textState = fullName,
@@ -71,7 +70,6 @@ fun RegisterScreen() {
         )
         Spacer(modifier = Modifier.height(10.dp))
 
-        // Email
         FormField(
             label = "Email",
             textState = email,
@@ -80,7 +78,6 @@ fun RegisterScreen() {
         )
         Spacer(modifier = Modifier.height(10.dp))
 
-        // Password
         FormField(
             label = "Password",
             textState = password,
@@ -90,7 +87,6 @@ fun RegisterScreen() {
         )
         Spacer(modifier = Modifier.height(10.dp))
 
-        // Phone (Optional)
         FormField(
             label = "Phone Number (Optional)",
             textState = phone,
@@ -99,7 +95,6 @@ fun RegisterScreen() {
         )
         Spacer(modifier = Modifier.height(10.dp))
 
-        // Emergency Contact Name
         FormField(
             label = "Emergency Contact Name (Optional)",
             textState = emergencyName,
@@ -108,7 +103,6 @@ fun RegisterScreen() {
         )
         Spacer(modifier = Modifier.height(10.dp))
 
-        // Emergency Contact Phone
         FormField(
             label = "Emergency Contact Phone (Optional)",
             textState = emergencyPhone,
@@ -117,7 +111,6 @@ fun RegisterScreen() {
         )
         Spacer(modifier = Modifier.height(30.dp))
 
-        // Register Button
         Button(
             modifier = Modifier
                 .width(250.dp)
@@ -127,7 +120,6 @@ fun RegisterScreen() {
                 contentColor = Color.White
             ),
             onClick = {
-                // TODO: Add Register Logic
             }
         ) {
             Text(text = "Register", fontSize = 20.sp)

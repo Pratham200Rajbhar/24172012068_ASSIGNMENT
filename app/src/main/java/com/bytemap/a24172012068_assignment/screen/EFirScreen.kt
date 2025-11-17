@@ -15,8 +15,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.DatePicker
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -81,6 +81,8 @@ fun IncidentType() {
         Incident("Emergency", Icons.Default.Emergency),
         Incident("Other", Icons.Default.Notes)
     )
+    
+    var selectedIncident by remember { mutableStateOf<String?>(null) }
 
     Text(
         text = "Incident Type",
@@ -90,31 +92,40 @@ fun IncidentType() {
         fontWeight = FontWeight.Medium
     )
 
-    Column(
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+    FlowRow(
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = Modifier.fillMaxWidth()
     ) {
-        for (i in incidentTypes.chunked(2)) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                i.forEach { incident ->
-                    OutlinedButton(
-                        onClick = { },
-                        modifier = Modifier.weight(1f)
+        incidentTypes.forEach { incident ->
+            FilterChip(
+                selected = selectedIncident == incident.name,
+                onClick = { 
+                    selectedIncident = if (selectedIncident == incident.name) null else incident.name
+                },
+                label = {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
                         Icon(
                             imageVector = incident.icon,
-                            contentDescription = "${incident.name} Icon"
+                            contentDescription = "${incident.name} Icon",
+                            modifier = Modifier.size(18.dp)
                         )
                         Spacer(modifier = Modifier.width(6.dp))
                         Text(text = incident.name)
                     }
-                }
-                if (i.size < 2) {
-                    Spacer(modifier = Modifier.weight(1f))
-                }
-            }
+                },
+                leadingIcon = if (selectedIncident == incident.name) {
+                    {
+                        Icon(
+                            imageVector = Icons.Default.Check,
+                            contentDescription = "Selected",
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
+                } else null
+            )
         }
     }
     
@@ -218,8 +229,8 @@ fun DateTime() {
                 fontSize = 13.sp
             )
         },
-        readOnly = true, // prevents typing
-        enabled = true   // ensures clickable works
+        readOnly = true,
+        enabled = true
     )
 }
 

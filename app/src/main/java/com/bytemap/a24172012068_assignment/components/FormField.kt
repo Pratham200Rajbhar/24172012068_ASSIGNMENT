@@ -29,7 +29,7 @@ fun FormField(
         value = textState,
         onValueChange = onTextChange,
         label = { Text(text = "Enter $label") },
-        trailingIcon = { Icon(imageVector = icon, contentDescription = "$label icon") }, // dynamic icon
+        trailingIcon = { Icon(imageVector = icon, contentDescription = "$label icon") },
         singleLine = true,
         modifier = Modifier.fillMaxWidth(),
         visualTransformation = if (isPasswordField) PasswordVisualTransformation() else VisualTransformation.None,

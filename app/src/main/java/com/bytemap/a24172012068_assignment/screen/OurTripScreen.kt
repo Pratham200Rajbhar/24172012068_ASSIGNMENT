@@ -23,7 +23,6 @@ fun OurTripScreen() {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        // Current Location Card
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
@@ -52,7 +51,6 @@ fun OurTripScreen() {
 
         Spacer(Modifier.height(16.dp))
 
-        // Set Destination Card
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
@@ -82,7 +80,6 @@ fun OurTripScreen() {
 
         Spacer(Modifier.height(16.dp))
 
-        // Trip Status Card
         Card(
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(16.dp),
@@ -109,7 +106,6 @@ fun OurTripScreen() {
 
         Spacer(Modifier.height(16.dp))
 
-        // Refresh Button
         OutlinedButton(
             onClick = {},
             modifier = Modifier.fillMaxWidth(),

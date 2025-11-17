@@ -57,7 +57,6 @@ fun ActivityLogLineModern(activity: TripActivity) {
             .padding(vertical = 6.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // Pill-shaped time indicator
         Box(
             modifier = Modifier
                 .clip(RoundedCornerShape(16.dp))
@@ -85,7 +84,6 @@ fun ActivityLogLineModern(activity: TripActivity) {
     }
 }
 
-// Mocked data for preview
 val sampleActivities = listOf(
     TripActivity("08:30 AM", "Trip Started", "23.474803, 72.391667"),
     TripActivity("08:45 AM", "Stopped at Gas Station", "23.480000, 72.393000"),
